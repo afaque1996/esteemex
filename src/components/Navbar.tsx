@@ -1,5 +1,4 @@
 'use client'
-// Updated mobile navbar with enhanced styling and animations
 import Image from 'next/image'
 import Link from 'next/link'
 import { usePathname } from 'next/navigation'
@@ -103,8 +102,8 @@ export default function Navbar() {
                             href={link.href}
                             onClick={() => setIsMobileMenuOpen(false)}
                             className={`px-6 py-3 transition-colors duration-300 border-l-4 ${pathname === link.href
-                                    ? 'text-blue-600 border-blue-600 bg-blue-50 font-semibold'
-                                    : 'text-gray-800 border-transparent hover:text-blue-600 hover:bg-blue-50 hover:border-blue-600'
+                                ? 'text-blue-600 border-blue-600 bg-blue-50 font-semibold'
+                                : 'text-gray-800 border-transparent hover:text-blue-600 hover:bg-blue-50 hover:border-blue-600'
                                 }`}
                         >
                             {link.name}
