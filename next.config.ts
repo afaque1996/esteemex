@@ -4,7 +4,7 @@ const nextConfig = {
     images: {
         unoptimized: true,
     },
-    basePath: '/esteemex-website',
+    // Removing basePath since we're using a custom domain
 }
 
-export default nextConfig;
+export default nextConfig
