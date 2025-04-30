@@ -1,4 +1,5 @@
 'use client'
+// Updated mobile navbar with enhanced styling and animations
 import Image from 'next/image'
 import Link from 'next/link'
 import { usePathname } from 'next/navigation'
