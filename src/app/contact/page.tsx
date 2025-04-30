@@ -2,25 +2,31 @@
 
 import { useState } from 'react'
 import FadeInSection from '@/components/FadeInSection'
-import { submitContactForm } from './actions'
 
 export default function ContactPage() {
     const [formStatus, setFormStatus] = useState<'idle' | 'submitting' | 'success' | 'error'>('idle')
 
-    async function handleSubmit(formData: FormData) {
+    async function handleSubmit(e: React.FormEvent<HTMLFormElement>) {
+        e.preventDefault()
+        setFormStatus('submitting')
+        
         try {
-            setFormStatus('submitting')
-            const result = await submitContactForm(formData)
+            const form = e.target as HTMLFormElement
+            const response = await fetch('https://formspree.io/f/YOUR_FORM_ID', {
+                method: 'POST',
+                body: new FormData(form),
+                headers: {
+                    'Accept': 'application/json'
+                }
+            })
 
-            if (result.success) {
+            if (response.ok) {
                 setFormStatus('success')
-                // Reset form
-                const form = document.getElementById('contactForm') as HTMLFormElement
-                form?.reset()
+                form.reset()
             } else {
                 setFormStatus('error')
             }
-        } catch (error) {
+        } catch {
             setFormStatus('error')
         }
     }
@@ -45,7 +51,7 @@ export default function ContactPage() {
                     <FadeInSection delay={0.2}>
                         <div className="bg-white p-8 rounded-xl shadow-lg">
                             <h2 className="text-2xl font-semibold mb-6">Send us a Message</h2>
-                            <form action={handleSubmit} id="contactForm" className="space-y-6">
+                            <form onSubmit={handleSubmit} id="contactForm" className="space-y-6">
                                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
                                     <div>
                                         <label className="block text-sm font-medium mb-2 text-gray-700">Your Name *</label>
@@ -100,7 +106,7 @@ export default function ContactPage() {
 
                                 {formStatus === 'success' && (
                                     <div className="p-4 bg-green-50 text-green-700 rounded-lg">
-                                        Thank you for your message! We'll get back to you soon.
+                                        Thank you for your message! We&apos;ll get back to you soon.
                                     </div>
                                 )}
 
