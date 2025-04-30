@@ -1,4 +1,5 @@
 import Head from 'next/head'
+import Image from 'next/image'
 import FadeInSection from '@/components/FadeInSection'
 
 export default function Home() {
@@ -14,15 +15,14 @@ export default function Home() {
         <FadeInSection>
           <section className="relative px-6 md:px-16 py-32 text-center min-h-[90vh] flex items-center justify-center">
             {/* Background Image */}
-            <div
-              className="absolute inset-0 z-0"
-              style={{
-                backgroundImage: 'url(/home-section.jpg)',
-                backgroundSize: 'cover',
-                backgroundPosition: 'center',
-                backgroundRepeat: 'no-repeat',
-              }}
-            >
+            <div className="absolute inset-0 z-0">
+              <Image
+                src="/home-section.jpg"
+                alt="Global Trade Background"
+                fill
+                className="object-cover"
+                priority
+              />
               {/* Overlay */}
               <div className="absolute inset-0 bg-gradient-to-r from-blue-900/80 via-gray-900/80 to-blue-900/80" />
             </div>
@@ -161,12 +161,13 @@ export default function Home() {
                   key={client.name}
                   className="bg-white p-6 rounded-lg shadow-sm hover:shadow-md transition-shadow duration-300 flex flex-col items-center justify-center"
                 >
-                  <div className="w-32 h-20 flex items-center justify-center mb-3">
+                  <div className="w-32 h-20 relative flex items-center justify-center mb-3">
                     {client.logo ? (
-                      <img
+                      <Image
                         src={client.logo}
                         alt={`${client.name} logo`}
-                        className="max-w-full max-h-full object-contain"
+                        fill
+                        className="object-contain"
                       />
                     ) : (
                       <div className="text-gray-400 text-center font-medium">

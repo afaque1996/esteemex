@@ -1,4 +1,5 @@
 import Head from 'next/head'
+import Image from 'next/image'
 import FadeInSection from '@/components/FadeInSection'
 
 export default function AboutPage() {
@@ -119,10 +120,11 @@ export default function AboutPage() {
                                     </div>
                                 </div>
                                 <div className="relative h-[400px] rounded-2xl overflow-hidden shadow-xl">
-                                    <img
+                                    <Image
                                         src="/import-icon.jpg"
                                         alt="Global Trade Operations"
-                                        className="absolute inset-0 w-full h-full object-cover"
+                                        fill
+                                        className="object-cover"
                                     />
                                     <div className="absolute inset-0 bg-gradient-to-t from-gray-900/70 to-transparent" />
                                 </div>

@@ -20,7 +20,7 @@ export default function ContactPage() {
             } else {
                 setFormStatus('error')
             }
-        } catch (error) {
+        } catch {
             setFormStatus('error')
         }
     }
