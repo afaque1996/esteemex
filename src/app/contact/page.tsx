@@ -144,18 +144,10 @@ export default function ContactPage() {
                                 <h2 className="text-2xl font-semibold mb-6">Our Offices</h2>
                                 <div className="space-y-6">
                                     <div>
-                                        <h3 className="font-medium text-blue-600 mb-2">Communication Office</h3>
-                                        <p className="text-gray-600 leading-relaxed">
-                                            F-203, 2nd Floor, Nerul Station Complex (West),<br />
-                                            Station Road, Sector 20,<br />
-                                            Navi Mumbai, Maharashtra - 400706
-                                        </p>
-                                    </div>
-                                    <div>
                                         <h3 className="font-medium text-blue-600 mb-2">Registered Office</h3>
                                         <p className="text-gray-600 leading-relaxed">
-                                            F-505, Sai Galaxy, Plot No - 111,<br />
-                                            Sector - 14, Taloja Phase - 1,<br />
+                                            F-403, Thakur Castle, Plot No - 34,<br />
+                                            Sector - 35, Taloja Phase - 1,<br />
                                             Raigarh, Panvel, Navi Mumbai,<br />
                                             Maharashtra - 410209
                                         </p>
