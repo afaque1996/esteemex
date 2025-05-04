@@ -184,7 +184,7 @@ export default function ContactPage() {
                                         <div>
                                             <h3 className="font-medium text-gray-900">Email</h3>
                                             <a href="mailto:info@scmcorporation.net" className="text-blue-600 hover:text-blue-700">
-                                                info@scmcorporation.net
+                                                info@esteemex.net
                                             </a>
                                         </div>
                                     </div>
@@ -194,7 +194,7 @@ export default function ContactPage() {
                                         </svg>
                                         <div>
                                             <h3 className="font-medium text-gray-900">GST Number</h3>
-                                            <p className="text-gray-600">27AEQFS1173J1ZJGSN</p>
+                                            <p className="text-gray-600">27ACAPF2887Q1Z2</p>
                                         </div>
                                     </div>
                                 </div>
